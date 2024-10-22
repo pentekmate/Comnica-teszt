@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import people from './assets/people.png'
+import logo from './assets/logo.png'
 import './App.css';
+import Button from './assets/Components/Button';
+
+function handleClick(){
+  console.log("Szia!")
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <div className='container-left'>
+            <div className='logo-container'>
+                <img className='logo-img' alt='logo' src={logo}></img>
+            </div>
+            <div className='content-container'>
+                <div className='h1-container'>
+                  <h1>Comnice Signature</h1>
+                  <p className='slogan'>Digitális aláíró szolgáltatás a Comnicától</p>
+                </div>
+                <img className='h1-image' alt='people' src={people}></img>
+            </div>
+      </div>
+      <div className='container-right'>
+          <p className='greetings'>Üdvözlöm a Comnica Signature-ben!</p>
+          <p className='alert-message'>Következőkben végigvezetjük dokumentumai elfogadásában és aláírásán. A folyamat több percet is igénybe vehet, ezért kérjük, csak akkor kezdje el, ha készen áll rá.</p>
+          <div className='btn-container'>
+              <Button onClick={handleClick} title={'Kezdhetjük'}></Button>
+          </div>
+      </div>
     </div>
   );
 }
