@@ -3,7 +3,10 @@ import logo from './assets/logo.png'
 import './App.css';
 import Button from './assets/Components/Button';
 
-function handleClick(){
+//eredetileg az app, egy 1920x1080px-es 24"colos monitorra lett optimalizálva, így a reszponzivitás más képernyőkön kérdéses.
+
+function handleClick(e){
+  e.preventDefault() //úgy feltételezem, hogy SPA az oldal, így erre szükségünk lehet, hogy ne töltse újra az oldalt
   console.log("Szia!")
 }
 
@@ -26,7 +29,7 @@ function App() {
           <p className='greetings'>Üdvözlöm a Comnica Signature-ben!</p>
           <p className='alert-message'>Következőkben végigvezetjük dokumentumai elfogadásában és aláírásán. A folyamat több percet is igénybe vehet, ezért kérjük, csak akkor kezdje el, ha készen áll rá.</p>
           <div className='btn-container'>
-              <Button onClick={handleClick} title={'Kezdhetjük'}></Button>
+              <Button onClick={(e)=>handleClick(e)} title={'Kezdhetjük'}></Button>
           </div>
       </div>
     </div>
